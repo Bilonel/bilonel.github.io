@@ -1421,7 +1421,7 @@ input, select, textarea {
 		background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
 		background-image: -ms-radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
 		background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
-		max-width: 100%;
+		max-width: 90%;
 		text-align: center;
 	}
 
@@ -1431,17 +1431,18 @@ input, select, textarea {
 			-ms-transition: opacity 0.325s ease-in-out;
 			transition: opacity 0.325s ease-in-out;
 			position: relative;
-			margin-top: 3.5rem;
+			margin-top: 3rem;
+			border-width: 2px;
 		}
 
 			#header > *:before {
 				content: '';
 				display: block;
 				position: absolute;
-				top: calc(-3.5rem - 1px);
+				top: calc(-3rem - 1px);
 				left: calc(50% - 1px);
 				width: 1px;
-				height: calc(3.5rem + 1px);
+				height: calc(3rem + 1px);
 				background: #ffffff;
 			}
 
@@ -1466,10 +1467,9 @@ input, select, textarea {
 			}
 
 		#header .content {
-			border-style: solid;
+			border-style:dotted;
 			border-color: #ffffff;
-			border-top-width: 1px;
-			border-bottom-width: 1px;
+			border-width: 2px;
 			max-width: 100%;
 		}
 
@@ -1483,7 +1483,7 @@ input, select, textarea {
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
 				padding: 3rem 2rem;
-				max-height: 40rem;
+				max-height: 140rem;
 				overflow: hidden;
 			}
 
@@ -1499,12 +1499,12 @@ input, select, textarea {
 			}
 
 		#header nav ul {
-			display: -moz-grid;
-			display: -webkit-grid;
-			display: -ms-grid;
-			display: inline-grid;
-			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-			grid-template-rows: auto;
+			display:-moz-grid;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: inline-flex;
+			flex-wrap: wrap;
+			justify-content: center;
 			margin-bottom: 0px;
 			list-style: none;
 			padding-left: 0px;
@@ -1512,7 +1512,13 @@ input, select, textarea {
 		}
 
 			#header nav ul li {
-				padding-left: 10px;
+				padding-left: 3px;
+				padding-right: 3px;
+				padding-bottom: 2px;
+				width: max-content;
+				height: fit-content;
+				text-align: center;
+				align-self: center;
 			}
 
 				#header nav ul li:first-child {
@@ -1541,17 +1547,6 @@ input, select, textarea {
 					#header nav ul li a:active {
 						background-color: rgba(255, 255, 255, 0.175);
 					}
-
-		#header nav.use-middle:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: calc(50% - 1px);
-			width: 1px;
-			height: 100%;
-			background: #ffffff;
-		}
 
 		#header nav.use-middle ul li.is-middle {
 			border-left: 0;
@@ -1631,7 +1626,6 @@ input, select, textarea {
 			#header {
 				padding: 1.5rem 0;
 			}
-
 				#header .content .inner {
 					padding: 2.5rem 0;
 				}
