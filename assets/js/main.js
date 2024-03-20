@@ -3,7 +3,20 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
+$(function () {
+    "use strict";
+    
+    $(".popup img").click(function () {
+        var $src = $(this).attr("src");
+        $(".show").fadeIn();
+        $(".img-show img").attr("src", $src);
+    });
+    
+    $("span, .overlay").click(function () {
+        $(".show").fadeOut();
+    });
+    
+});
 (function($) {
 
 	var	$window = $(window),
@@ -295,6 +308,12 @@
 					$('<div class="close">Close</div>')
 						.appendTo($this)
 						.on('click', function() {
+							var media = document.getElementsByClassName('media'),
+							i = media.length;
+							
+							while (i--) {
+								media[i].pause();
+							}
 							location.hash = '';
 						});
 
