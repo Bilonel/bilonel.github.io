@@ -1031,7 +1031,11 @@ input, select, textarea {
 		}
 
 /* Icons */
-
+nav.icons{
+	display: grid;
+	grid-template-columns: 5fr 5fr 5fr;
+	width: 100%;
+}
 	ul.icons {
 		cursor: default;
 		list-style: none;
@@ -1431,7 +1435,7 @@ input, select, textarea {
 			-ms-transition: opacity 0.325s ease-in-out;
 			transition: opacity 0.325s ease-in-out;
 			position: relative;
-			margin-top: 3rem;
+			margin-top: 2rem;
 			border-width: 2px;
 		}
 
@@ -1439,10 +1443,10 @@ input, select, textarea {
 				content: '';
 				display: block;
 				position: absolute;
-				top: calc(-3rem - 1px);
+				top: calc(-2rem - 1px);
 				left: calc(50% - 1px);
-				width: 1px;
-				height: calc(3rem + 1px);
+				width: 2px;
+				height: calc(2rem + 1px);
 				background: #ffffff;
 			}
 
@@ -1455,21 +1459,21 @@ input, select, textarea {
 			}
 
 		#header .logo {
-			width: 5.5rem;
-			height: 5.5rem;
-			line-height: 5.5rem;
+			width: 4.5rem;
+			height: 4.5rem;
+			line-height: 4.5rem;
 			border: solid 1px #ffffff;
 			border-radius: 100%;
 		}
 
 			#header .logo .icon:before {
-				font-size: 3rem;
+				font-size: 2.6rem;
 			}
 
 		#header .content {
 			border-style:dotted;
 			border-color: #ffffff;
-			border-width: 2px;
+			border-width: 3px;
 			max-width: 100%;
 		}
 
@@ -1482,8 +1486,8 @@ input, select, textarea {
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
-				padding: 3rem 2rem;
-				max-height: 140rem;
+				padding: 1.5rem 1.5rem .5rem 1.5rem;
+				max-height: 120rem;
 				overflow: hidden;
 			}
 
@@ -1497,12 +1501,11 @@ input, select, textarea {
 				font-size: 0.8rem;
 				line-height: 2;
 			}
-
 		#header nav ul {
 			display:-moz-grid;
 			display: -webkit-flex;
 			display: -ms-flexbox;
-			display: inline-flex;
+			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
 			margin-bottom: 0px;
