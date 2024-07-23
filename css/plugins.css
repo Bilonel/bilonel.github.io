@@ -1,0 +1,254 @@
+/**
+ * Featherlight - ultra slim jQuery lightbox
+ * Version 1.7.8 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2017, Noël Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+@media all{html.with-featherlight{overflow:hidden}
+.featherlight{display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483647;text-align:center;white-space:nowrap;cursor:pointer;background:#333;background:rgba(0,0,0,0)}
+
+.featherlight:last-of-type{background:rgba(0,0,0,.84)}
+
+.featherlight:before{content:'';display:inline-block;height:100%;vertical-align:middle}
+
+.featherlight .featherlight-content{
+    position:relative;
+    text-align:left;
+    vertical-align:middle;
+    display:inline-block;
+    overflow-y:visible;
+    overflow-x: hidden; 
+    padding:0px 0 0;
+    border-bottom:0px solid transparent;
+    max-height:90%;
+    max-width: 40%; 
+    background:#c7d6e8;
+    cursor:auto;
+    white-space:normal;
+    font-size: 1rem;
+}
+
+.featherlight .featherlight-inner{display:block}
+
+.featherlight link.featherlight-inner,.featherlight script.featherlight-inner,.featherlight style.featherlight-inner{display:block}
+
+.featherlight .featherlight-close-icon{position:absolute;z-index:9999;top:0;right:0;line-height:25px;width:25px;cursor:pointer;text-align:center;font-family:Arial,sans-serif;background:#fff;background:rgba(255,255,255,.3);color:#000;border:0;padding:0}
+.featherlight .featherlight-close-icon::-moz-focus-inner{border:0;padding:0}
+.featherlight .featherlight-image{width:100%}
+.featherlight-iframe .featherlight-content{border-bottom:0;padding:0;-webkit-overflow-scrolling:touch;overflow-y:scroll}
+.featherlight iframe{border:0}
+.featherlight *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}}
+@media only screen and (max-width:1024px)
+{
+    .featherlight 
+    .featherlight-content
+    {
+        max-width: 70%;
+        max-height:96%;
+        padding:10px 10px 0;
+        border-bottom:10px solid transparent;
+        font-size: .85rem;
+    }
+}
+@media only screen and (max-width:640px)
+{
+    .featherlight 
+    .featherlight-content
+    {
+        max-width: 90%;
+        max-height:98%;
+        padding:10px 10px 0;
+        font-size: .7rem;
+        border-bottom:8px solid transparent;
+    }
+}
+
+
+/*** Spinner
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+/*** Header
+#home {
+    margin-bottom: 6rem;
+    background: url(../img/bg-header.png) left top no-repeat;
+}
+
+.typed-cursor {
+    font-size: 30px;
+    color: var(--dark);
+}
+
+.btn-play {
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    width: 16px;
+    height: 26px;
+    border-radius: 100%;
+    border: none;
+    outline: none !important;
+    padding: 18px 20px 20px 28px;
+    background: var(--primary);
+}
+
+.btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 100%;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+
+.btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 100%;
+    transition: all 200ms;
+}
+
+.btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    left: -1px;
+    border-left: 16px solid var(--primary);
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+        opacity: 0;
+    }
+}
+
+/*** Project Portfolio ***/
+.portfolio-img {
+    position: relative;
+}
+
+.portfolio-btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(98, 68, 197, .9);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 30px;
+    padding-bottom: 100px !important;
+    opacity: 0;
+    transition: .5s;
+}
+
+.portfolio-item:hover .portfolio-btn {
+    opacity: 1;
+    padding-bottom: 30px !important;
+}
+#portfolio-flters li {
+    display: inline-block;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: .4rem 1rem;
+    background-color:transparent;
+}
+
+#portfolio-flters li:hover
+{
+    transition: .7s;
+
+    background-color: rgb(15, 55, 255);
+}
+#portfolio-flters li.active {
+    background-color: transparent;
+    border-color: rgb(15, 55, 255);
+    border-width: 3px;
+}
+@media only screen and (max-width:720px)
+{
+    #portfolio-flters ul{
+        margin: 0;
+        padding: 0;
+    }
+    #portfolio-flters li{
+        margin: 0;
+        padding: .2rem;
+    }
+}
