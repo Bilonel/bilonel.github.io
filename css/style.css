@@ -145,19 +145,24 @@ a:hover {
 
 .lead
 {
-  font-weight: 350;
+  font-weight: 380;
   font-size: 1rem;
 } 
 .skillTopic
 {
-  font-weight: 450;
-  font-size: .9rem;
+  font-weight: 500;
+  font-size: 1rem;
 }
-
+.skillTopicSub
+{
+  font-weight: 380;
+  font-size: .9rem;
+  margin-left: 1rem;
+}
 /*--/ Title s /--*/
 
 .title-s {
-  font-weight: 600;
+  font-weight: 640;
   color: #1e1e1e;
   font-size: 1rem;
   margin-top: .6rem;
@@ -564,6 +569,13 @@ a:hover {
   font-size: 1.6rem;
   font-weight: 600;
 }
+.navbar-b .navbar-brand img{
+  width: 2.1rem;
+  margin-bottom: .3rem;
+  height: 100%;
+  border-radius: 50%;
+  pointer-events: none;
+}
 
 .navbar-b .navbar-nav .dropdown-item.show .dropdown-menu,
 .navbar-b .dropdown.show .dropdown-menu,
@@ -743,13 +755,13 @@ a:hover {
 
 .skill-mf .progress {
   background-color: #cde1f8;
-  margin: .1rem 0 .8rem 0;
+  margin: .2rem 0 .9rem 0;
   border-radius: 0;
   height: .5rem;
 }
 
 .skill-mf .progress .progress-bar {
-  height: .5rem;
+  height: .6rem;
   background-color: #0078ff;
 }
 
@@ -759,7 +771,7 @@ a:hover {
 
 .service-box {
   background-color: #fff;
-  padding: 2.5rem 1.3rem;
+  padding: 2.5rem 0;
   border-radius: 1rem;
   margin-bottom: 3rem;
 }
@@ -774,6 +786,7 @@ a:hover {
 .service-box .service-ico {
   margin-bottom: 1rem;
   color: #1e1e1e;
+  padding: 0 .4rem;
 }
 
 .service-box .ico-circle {
@@ -788,11 +801,11 @@ a:hover {
 .service-box .s-title {
   font-size: 1.5rem;
   text-align: center;
-  padding: .4rem 0;
 }
 
 .service-box .s-description {
   color: #4e4e4e;
+  padding: 0 .6rem;
 }
 
 /*======================================
@@ -1135,18 +1148,50 @@ footer .credits a {
     -ms-user-select: none;
     user-select: none;
     
-    font-size: 1.3rem;
-    color:#0062d3;
-
     border-radius: 5rem;
     border: 5px solid #0062d3;
-    
+    color:black;
+    font-size: 1.3rem;
+    font-weight: 320;
+
     margin: 1rem;
     line-height: 2.15rem;
     height: 3rem;
     transition: all 500ms ease;
     cursor: pointer;
+    overflow: hidden;
   }
+  @media (max-width: 1400) {
+    .button-download {
+      font-size: 1.2rem;
+    }
+  }
+  @media (max-width: 1300) {
+    .button-download {
+      font-size: 1.1rem;
+    }
+  }
+  @media (max-width: 1200px) {
+    .button-download {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 1100px) {
+    .button-download {
+      font-size: .9rem;
+    }
+  }
+  
+  @media (max-width: 960px) {
+    .button-download {
+      font-size: .8rem;
+    }
+  }
+@media (max-width: 768px) {
+  .button-download {
+    font-size: 1.2rem;
+  }
+}
   
 .button-download:focus {
   outline: 5px;
